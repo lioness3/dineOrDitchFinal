@@ -4,10 +4,14 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 import DitchButton from '../components/DitchButton';
 import DineButton from '../components/DineButton';
+import Output from '../components/Output';
+import Instructions from '../components/Instructions';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Restaurant Suggestions</Text>
+      <Instructions/>
+      <Output/>
       <DitchButton/>
       <DineButton/>
     </View>
