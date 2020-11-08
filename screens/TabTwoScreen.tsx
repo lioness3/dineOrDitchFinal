@@ -1,21 +1,26 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet } from 'react-native';
 import DitchButton from '../components/DitchButton';
 import DineButton from '../components/DineButton';
 import Output from '../components/Output';
 import Instructions from '../components/Instructions';
+
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
+  const [restaurant, setRestaurant] = useState(false)
+  if(!restaurant){
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Recipe Suggestions</Text>
       <Instructions/>
-      <Output/>
+      <Output suggestion='recipe'/>
       <DitchButton/>
       <DineButton/>
+    
     </View>
   );
+  }
 }
 
 const styles = StyleSheet.create({

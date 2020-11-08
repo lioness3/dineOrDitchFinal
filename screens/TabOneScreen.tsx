@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
@@ -7,15 +7,19 @@ import DineButton from '../components/DineButton';
 import Output from '../components/Output';
 import Instructions from '../components/Instructions';
 export default function TabOneScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Restaurant Suggestions</Text>
-      <Instructions/>
-      <Output/>
-      <DitchButton/>
-      <DineButton/>
-    </View>
-  );
+  const [recipe, setRecipe] = useState(false)
+  if(!recipe){
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Restaurant Suggestions</Text>
+        <Instructions/>
+        <Output/>
+        <DitchButton/>
+        <DineButton/>
+      </View>
+    );
+  }
+
 }
 
 const styles = StyleSheet.create({
