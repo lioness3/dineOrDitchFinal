@@ -37,10 +37,10 @@ export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Recipe Suggestions</Text>
-      <Instructions/>
+      {/* <Instructions/> */}
       <Output suggestion={recipe}/>
       <DitchButton onChange={()=>{setLoading(false)}}/>
-      <DineButton/>
+      <DineButton info={recipe} title='recipe'/>
     
     </View>
   );
@@ -58,9 +58,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
 
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+
 });
